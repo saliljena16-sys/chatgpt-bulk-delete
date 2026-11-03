@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Bulk Delete",
+  "version": "1.0.0",
+  "description": "Select and delete multiple ChatGPT conversations after confirmation.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {"default_title": "Manage ChatGPT chats"},
+  "background": {"service_worker": "background.js"}
+}
