@@ -1,39 +1,47 @@
 # ChatGPT Bulk Delete
 
-Select multiple ChatGPT conversations, review their titles, and delete them one at a time from one panel. Works as an unpacked extension for Chrome and Microsoft Edge.
+I made this extension because deleting ChatGPT chats one at a time gets annoying. It lets you select a bunch of chats and delete them together.
 
-> **Status:** The selection and deletion flow has been tested with simulated responses. Actual deletion on a live ChatGPT account has not yet been verified. Test with one expendable conversation first. ChatGPT can change its unofficial web interface at any time.
+It works in Chrome and Microsoft Edge.
 
-## Install
+## How to install
 
-1. On this GitHub repository, click **Code → Download ZIP**. Extract the downloaded ZIP. Alternatively, clone the repository.
-2. In Chrome, open `chrome://extensions`. In Edge, open `edge://extensions`.
-3. Turn on **Developer mode**, then click **Load unpacked**.
-4. Select the extracted project folder containing `manifest.json`.
-5. Open or refresh [ChatGPT](https://chatgpt.com/) and sign in. Click the extensions puzzle-piece icon, then **ChatGPT Bulk Delete**. You can pin it to your toolbar.
+1. Click the green **Code** button at the top of this page, then click **Download ZIP**.
+2. Extract the ZIP file.
+3. Open a new tab and go to:
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
+4. Turn on **Developer mode**, then click **Load unpacked**.
+5. Choose the extracted folder that contains the `manifest.json` file.
+6. Open or refresh [ChatGPT](https://chatgpt.com/). Click the puzzle piece in your browser's toolbar, then select **ChatGPT Bulk Delete**.
 
-The extension is not currently available in a browser extension store. Keep the extracted folder on your computer; removing it will break the installation.
+You can pin the extension to your toolbar to make it easier to find. Keep the extracted folder on your computer so the extension keeps working.
 
-## Use
+## How to use it
 
-1. On `chatgpt.com`, open the extension and click **Load chats**. Click **Load more** to fetch older chats.
-2. Check individual chats, or filter loaded titles and click **Select visible**. Filtering does not search chats that haven't been loaded. Archived chats may not appear.
-3. Click **Review deletion**, check every selected title, then choose **Delete permanently**. Deletion cannot be undone.
-4. Refresh ChatGPT to update its sidebar. If a request fails, the extension stops. Check your chat list before retrying; a failed or interrupted request may have completed on the server even if the extension could not confirm it.
+1. Open ChatGPT and click the extension.
+2. Click **Load chats**. If you want to see older chats, click **Load more**.
+3. Check the chats you want to delete. You can also search through the chats you've loaded and click **Select visible**.
+4. Click **Review deletion**, check the list, and then click **Delete permanently**.
+5. Refresh ChatGPT to update your sidebar.
 
-## Privacy and permissions
+**Deleted chats can't be recovered**, so double-check the list before confirming. If the extension stops because of an error, check your chat history before trying again. A request might have gone through even if the extension couldn't confirm it.
 
-The extension requests `activeTab` and `scripting` permissions so it can open its panel on the ChatGPT tab after you click its toolbar button. It accesses the current ChatGPT session token in memory to request conversation titles and delete selected chats. It makes its requests to `chatgpt.com`; the code contains no analytics or third-party data collection. It does not store the token or chat titles in extension storage. Read the source before installing if you want to verify this yourself.
+## Privacy
 
-Do not post screenshots, diagnostic logs, authentication tokens, or exported chat data in public issues. The repository's source code is not a chat backup.
+The extension uses your ChatGPT session to load your chat titles and delete the chats you select. It sends requests to ChatGPT, doesn't use analytics, and doesn't save your session token or chat titles in extension storage. You can check the code yourself.
 
-## Limitations
+It asks for permission to run on the active tab when you click the extension. You don't need to enter your password into it.
 
-- This is an independent project, not affiliated with or endorsed by OpenAI.
-- It relies on undocumented ChatGPT web endpoints that can change, fail, or behave differently for different accounts and workspaces. Availability is not guaranteed.
-- Selection covers only chats actually loaded into the panel. It does not automatically load all chats.
-- ChatGPT's own retention policies apply after deletion.
+## A few things to know
+
+- Search only looks through chats you've already loaded. Archived chats might not show up.
+- I tested an earlier version on a real ChatGPT account. The later changes were tested with simulated responses, so try it with a chat you don't need first.
+- This extension uses parts of ChatGPT's website that could change, so it might need updates in the future.
+- This is a personal project and isn't affiliated with OpenAI.
+
+If you run into a problem, feel free to open an issue. Please don't include your login details, session token, private chats, or screenshots with personal information.
 
 ## Updating
 
-Download and extract a newer version, then open your browser's extensions page and reload the extension. If you replaced the folder path, remove the old extension and use **Load unpacked** again.
+Download and extract the new version, then reload the extension from your browser's extensions page. If the folder is in a different location, remove the old extension and use **Load unpacked** again.
